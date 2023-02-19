@@ -1,4 +1,4 @@
-defmodule ExportTest do
+defmodule Fcm.ExportTest do
   use ExUnit.Case
   import ExUnit.CaptureIO
   alias Fcm.Export

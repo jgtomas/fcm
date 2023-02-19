@@ -1,4 +1,4 @@
-defmodule FileInputTest do
+defmodule Fcm.FileInputTest do
   use ExUnit.Case
   alias Fcm.FileInput
 
