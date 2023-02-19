@@ -1,18 +1,20 @@
 defmodule Fcm do
-  @moduledoc """
-  Documentation for `Fcm`.
-  """
+  alias Fcm.Export
+  alias Fcm.Format
+  alias Fcm.FileInput
+  alias Fcm.TravelerBuilder
 
-  @doc """
-  Hello world.
+  @spec start(String.t()) :: String.t()
+  def start(file_path) do
+    case FileInput.transform(file_path) do
+      {:ok, list_based_segment} ->
 
-  ## Examples
+        TravelerBuilder.build_detail_traveler(list_based_segment)
+        |>Format.by_groups()
+        |>Export.console()
 
-      iex> Fcm.hello()
-      :world
-
-  """
-  def hello do
-    :world
+      {:error, msg} ->
+        IO.puts msg
+    end
   end
 end
