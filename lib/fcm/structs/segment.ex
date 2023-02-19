@@ -12,6 +12,4 @@ defmodule Fcm.Structs.Segment do
     {:ok, date_to} =Date.from_iso8601(next_segment.date_to)
     Date.diff(date_from, date_to)<=1 and is_transport(segment) and is_transport(next_segment)
   end
-
-  #["Flight", "SVQ", "2023-03-02", "06:40", "->", "BCN", "09:10"]
 end
