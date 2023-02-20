@@ -1,0 +1,13 @@
+version: '3'
+services:
+  fcm_challenge:
+    image: 'fcm'
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: "mix run --no-halt"
+    volumes:
+      - .:/app
+      - mix:/root/.mix
+volumes:
+  mix:
